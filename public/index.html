@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Umber Coffee - small-batch roasters</title>
+  <link rel="icon" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top"><img src="images/logo.svg" alt="" width="40" height="40"> Umber Coffee</a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">Our story</a>
+      <a href="#visit">Visit</a>
+      <button class="cart-btn" id="openCart" aria-label="Open cart">Cart <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Coffee roasted this week, poured this morning.</h1>
+        <p>We roast in small batches every Tuesday and brew every cup to order. Pick up in store or take a bag of beans home.</p>
+        <a class="btn" href="#menu">Order coffee</a>
+      </div>
+      <img class="hero-img" src="images/cup.svg" alt="A steaming cup of black coffee on a saucer">
+    </section>
+
+    <section id="menu" class="section">
+      <h2>Menu</h2>
+      <div class="filters" role="group" aria-label="Filter menu">
+        <button class="chip active" data-cat="all">All</button>
+        <button class="chip" data-cat="hot">Hot drinks</button>
+        <button class="chip" data-cat="cold">Cold drinks</button>
+        <button class="chip" data-cat="beans">Beans</button>
+      </div>
+      <div class="grid" id="products" aria-live="polite">Loading menu…</div>
+    </section>
+
+    <section id="about" class="section about">
+      <img src="images/beans.svg" alt="A bag of Umber house blend beans">
+      <div>
+        <h2>Our story</h2>
+        <p>Umber started with one second-hand roaster and a single question: why is good coffee so rarely fresh? We buy directly from small farms, roast within days of selling, and print the roast date on every bag.</p>
+        <p>Come in, taste the difference, and tell us how you take it.</p>
+      </div>
+    </section>
+
+    <section id="visit" class="section visit">
+      <h2>Visit us</h2>
+      <p>12 Roaster Lane · Open daily, 7:00–18:00 · hello@umbercoffee.example</p>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Umber Coffee</footer>
+
+  <aside class="drawer" id="drawer" aria-label="Your cart" aria-hidden="true">
+    <div class="drawer-head"><h3>Your cart</h3><button class="icon-btn" id="closeCart" aria-label="Close cart">✕</button></div>
+    <ul id="cartItems"></ul>
+    <p class="total">Total <strong id="cartTotal">$0.00</strong></p>
+    <form id="checkout">
+      <label>Name <input name="name" required autocomplete="name"></label>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel"></label>
+      <button class="btn" type="submit">Place order</button>
+      <p id="msg" role="status"></p>
+    </form>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

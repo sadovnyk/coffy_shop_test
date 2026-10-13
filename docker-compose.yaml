@@ -1,0 +1,24 @@
+services:
+      app:
+        build: .
+        container_name: my_app
+        ports:
+          - 3000:3000
+        environment:
+          DATABASE_URL: postgres://postgres:${DB_PASSWORD}@db:5432/coffee_shop
+        depends_on:
+          - db
+      
+      db:
+        image: postgres:16-alpine
+        environment: 
+          POSTGRES_PASSWORD: ${DB_PASSWORD}
+          POSTGRES_DB: coffee_shop
+        volumes:
+          - pgdata:/var/lib/postgresql/data
+          - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+volumes:
+  pgdata:
+
+
