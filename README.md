@@ -1,5 +1,3 @@
-варавпа
-
 # Umber Coffee
 
 A small coffee shop website with a working menu, cart and checkout. Products, customers and orders are stored in PostgreSQL.
